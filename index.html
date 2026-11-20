@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101a2b"><meta name="description" content="Football Analyst 3.1 - statistiche storiche del primo tempo da archivi pubblici.">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css">
+<title>Football Analyst 3.1</title>
+</head>
+<body>
+<header class="top"><div class="brand"><div class="ball">⚽</div><div><h1>Football Analyst</h1><p>Protocollo 3.1 · Analisi del primo tempo</p></div></div><button id="installBtn" class="secondary hidden">Installa app</button></header>
+<main>
+<section class="panel">
+ <div class="section-head"><div><h2>Ricerca automatica</h2><p>Archivi pubblici gratuiti · Nessuna API key</p></div><span id="status" class="status">Pronto</span></div>
+ <div class="grid">
+  <label>Stagione<select id="season"><option>2026-27</option><option>2025-26</option><option>2024-25</option></select></label>
+  <label>Campionato<select id="league"></select></label>
+  <label class="wide">Filtro squadra<input id="teamSearch" type="search" placeholder="Scrivi il nome di una squadra"></label>
+ </div>
+ <div class="actions"><button id="loadBtn">Carica campionato</button><button id="allBtn" class="secondary">Cerca in tutti i campionati</button><button id="retryBtn" class="secondary">Riprova</button></div>
+ <p class="hint">Il programma interroga i file pubblici disponibili per la stagione selezionata. I campionati senza archivio sono segnalati come non disponibili; non vengono sostituiti con dati stimati.</p>
+</section>
+<section class="panel"><div class="section-head"><div><h2>Partite</h2><p id="matchMeta">Nessun archivio caricato</p></div><button id="clearBtn" class="secondary small">Pulisci</button></div><div id="matches" class="empty">Carica un campionato per visualizzare le partite.</div></section>
+<section class="panel"><div class="section-head"><div><h2>Scheda statistica squadra</h2><p>Seleziona una squadra da una partita</p></div></div><div id="analysis" class="empty">Nessuna squadra selezionata.</div></section>
+<section class="panel"><h2>Copertura e qualità dei dati</h2><div id="coverage" class="coverage">Non è stata ancora eseguita una ricerca.</div></section>
+<section class="panel"><h2>Protocollo 3.1 — regole operative</h2>
+<ul class="rules">
+<li><b>Mercato A:</b> la squadra segna almeno un gol nel primo tempo, recupero incluso.</li>
+<li><b>Mercato B:</b> la squadra è in vantaggio alla fine del primo tempo, recupero incluso; il pareggio non è vincente.</li>
+<li>Frequenze storiche e probabilità previste sono distinte. Questa versione mostra esclusivamente frequenze storiche calcolate dai risultati HT pubblicati.</li>
+<li>Campioni ultime 5 e 10 partite disponibili, split casa/trasferta e indicatori A/B. Il campione effettivo viene sempre mostrato.</li>
+<li>Quote escluse dall'analisi. Nessun pronostico automatico e nessuna selezione ufficialmente autorizzata.</li>
+<li>Indicatori 0–15, pressione 0–15', xG, tiri, assenze, formazioni e motivazioni sono N.D. se la fonte non fornisce dati verificabili.</li>
+<li>Copertura femminile: N.D. in questa build. Non vengono usate squadre maschili come sostituto dei dati femminili.</li>
+<li>Se i dati sono insufficienti, l'esito operativo è NO BET / nessuna selezione.</li>
+</ul></section>
+<footer>Fonte archivio: OpenFootball football.json · Dati comunitari CC0 · Non è un servizio live. <a href="https://github.com/openfootball/football.json" target="_blank" rel="noopener">Documentazione fonte</a></footer>
+</main><script src="./app.js" defer></script>
+</body></html>

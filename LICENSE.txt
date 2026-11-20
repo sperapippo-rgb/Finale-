@@ -1,0 +1,1 @@
+Codice del progetto: MIT License. Dataset OpenFootball football.json: CC0-1.0. Verificare le licenze delle fonti esterne prima di riutilizzarle.
